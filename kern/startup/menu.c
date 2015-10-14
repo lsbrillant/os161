@@ -120,6 +120,8 @@ cmd_progthread(void *ptr, unsigned long nargs)
  * so you should have it call your system-calls-assignment waitpid
  * code after forking.
  *
+ *
+ *
  * Also note that because the subprogram's thread uses the "args"
  * array and strings, until you do this a race condition exists
  * between that code and the menu input code.
@@ -664,7 +666,7 @@ menu_execute(char *line, int isargs)
 	for (command = strtok_r(line, ";", &context);
 	     command != NULL;
 	     command = strtok_r(NULL, ";", &context)) {
-
+			
 		if (isargs) {
 			kprintf("OS/161 kernel: %s\n", command);
 		}
@@ -678,6 +680,7 @@ menu_execute(char *line, int isargs)
 		}
 	}
 }
+
 
 /*
  * Command menu main loop.

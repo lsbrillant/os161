@@ -30,6 +30,10 @@
 #ifndef _TEST_H_
 #define _TEST_H_
 
+/* my stuff */
+void hello(void);
+
+
 /*
  * Declarations for test code and other miscellaneous high-level
  * functions.
